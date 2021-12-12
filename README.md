@@ -464,7 +464,7 @@ bash scripts/uda/visda/run_visda.sh deit_base
 bash scripts/pretrain/domainnet/run_domainnet_clp.sh deit_base
 bash scripts/uda/domainnet/run_domainnet_clp.sh deit_base
 ```
-DeiT-small Scripts.
+DeiT-Small scripts
 Replace deit_base with deit_small to run DeiT-Small results. An example of training on office-31 is as follows:
 ```bash
 # Office-31     Source: Amazon   ->  Target: Dslr, Webcam
