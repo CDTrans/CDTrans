@@ -480,6 +480,6 @@ python test.py --config_file 'configs/uda.yml' MODEL.DEVICE_ID "('0')" TEST.WEIG
 
 ## Acknowledgement
 
-Codebase from [TransReID](https://https://github.com/damo-cv/TransReID)
+Codebase from [TransReID](https://github.com/damo-cv/TransReID)
 
 
