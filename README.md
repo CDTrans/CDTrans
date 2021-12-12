@@ -445,7 +445,7 @@ Command input paradigm
 
 `bash scripts/[pretrain/uda]/[office31/officehome/visda/domainnet]/run_*.sh [deit_base/deit_small]`
 ## For example
-ViT-Base scripts
+DeiT-Base scripts
 ```bash
 
 # Office-31     Source: Amazon   ->  Target: Dslr, Webcam
@@ -464,8 +464,8 @@ bash scripts/uda/visda/run_visda.sh deit_base
 bash scripts/pretrain/domainnet/run_domainnet_clp.sh deit_base
 bash scripts/uda/domainnet/run_domainnet_clp.sh deit_base
 ```
-ViT-small Scripts.
-Replace deit_base with deit_small to run ViT-Small results. An example of training on office-31 is as follows:
+DeiT-small Scripts.
+Replace deit_base with deit_small to run DeiT-Small results. An example of training on office-31 is as follows:
 ```bash
 # Office-31     Source: Amazon   ->  Target: Dslr, Webcam
 bash scripts/pretrain/office31/run_office_amazon.sh deit_small
