@@ -1,0 +1,71 @@
+MODEL:
+  PRETRAIN_CHOICE: 'pretrain'
+  # PRETRAIN_PATH: '/home/xutongkun.xtk/.torch/models/jx_vit_base_p16_224-80ecf9dd.pth'
+  METRIC_LOSS_TYPE: 'triplet'
+  IF_LABELSMOOTH: 'off'
+  IF_WITH_CENTER: 'no'
+  NAME: 'transformer'
+  NO_MARGIN: True
+  DEVICE_ID: ('0')
+  Transformer_TYPE: 'uda_vit_base_patch16_224_TransReID' #uda_vit_small_patch16_224_TransReID
+  STRIDE_SIZE: [16, 16]
+  BLOCK_PATTERN: '3_branches'
+  TASK_TYPE: 'classify_DA'
+  UDA_STAGE: 'UDA'
+#  CAMERA_EMBEDDING: True
+#  VIEWPOINT_EMBEDDING: True
+
+INPUT:
+  SIZE_TRAIN: [256, 256]
+  SIZE_TEST: [256, 256]
+  SIZE_CROP: [224, 224]
+  PROB: 0.5 # random horizontal flip
+  RE_PROB: 0.0 # random erasing
+  PADDING: 0
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+
+DATASETS:
+  NAMES: ('OURAPI')
+  ROOT_TRAIN_DIR: ('/home/xutongkun.xtk/datasets/reid_datasets/Corrected_Market1501')
+  NAMES2: ('OURAPI')
+  ROOT_TRAIN_DIR2: ('/home/xutongkun.xtk/datasets/reid_datasets/Refined_DukeMTMC_reID')
+  ROOT_TEST_DIR: ('/home/xutongkun.xtk/datasets/reid_datasets/Refined_DukeMTMC_reID')
+
+DATALOADER:
+  SAMPLER: 'softmax'
+  NUM_INSTANCE: 4
+  NUM_WORKERS: 4
+
+SOLVER:
+  OPTIMIZER_NAME: 'SGD'
+  MAX_EPOCHS: 40
+  BASE_LR: 0.008
+  IMS_PER_BATCH: 64
+  STEPS: [40, 80]
+  GAMMA: 0.
+  WARMUP_FACTOR: 0.01
+  WARMUP_EPOCHS: 10
+  WARMUP_METHOD: 'linear'
+  LARGE_FC_LR: False
+  CHECKPOINT_PERIOD: 120
+  LOG_PERIOD: 100
+  EVAL_PERIOD: 1
+  WEIGHT_DECAY:  1e-4
+  WEIGHT_DECAY_BIAS: 1e-4
+  BIAS_LR_FACTOR: 2
+  WITH_PSEUDO_LABEL_FILTER: True
+
+TEST:
+  EVAL: True
+  IMS_PER_BATCH: 256
+  RE_RANKING: False
+  RE_RANKING_TRACK: False
+
+  WEIGHT: '../logs/trans4DA/transformer_120.pth'
+  NECK_FEAT: 'after'
+  FEAT_NORM: 'yes'
+
+OUTPUT_DIR: '../logs/trans4DA'
+
+
