@@ -1,6 +1,4 @@
-# CDTrans: Cross-domain Transformer for Unsupervised Domain Adaptation [[arxiv]](https://arxiv.org/abs/2109.06165)
-
-This is the *official* repository for  [CDTrans: Cross-domain Transformer for Unsupervised Domain Adaptation](https://arxiv.org/abs/2109.06165)
+# CDTrans: Cross-domain Transformer for Unsupervised Domain Adaptation
 
 ## Introduction
 
