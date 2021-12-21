@@ -405,7 +405,7 @@ pip install -r requirements.txt
 Download the UDA datasets [Office-31](https://drive.google.com/file/d/0B4IapRTv9pJ1WGZVd1VDMmhwdlE/view), [Office-Home](https://www.hemanthdv.org/officeHomeDataset.html), [VisDA-2017](http://csr.bu.edu/ftp/visda17/clf/), [DomainNet](http://ai.bu.edu/M3SDA/)
 
 Then unzip them and rename them under the directory like follow:
-(Note that each dataset floader needs to make sure that it contains the txt file that contain the path and lable of the picture, which is already in data/the_dataset of this project.)
+(Note that each dataset folder needs to make sure that it contains the txt file that contain the path and lable of the picture, which is already in data/the_dataset of this project.)
 
 ```
 data
