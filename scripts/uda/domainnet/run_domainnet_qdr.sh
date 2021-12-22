@@ -17,7 +17,7 @@ for target_dataset in 'infograph' 'painting' 'real' 'sketch' 'clipart'
 do
     python train.py --config_file configs/uda.yml MODEL.DEVICE_ID $gpus\
     OUTPUT_DIR '../logs/uda/'$model'/domainnet/quickdraw2'$target_dataset  \
-    MODEL.PRETRAIN_PATH '../logs/pretrain/'$model'/domainnet/Quickdraw/transformer_20.pth' \
+    MODEL.PRETRAIN_PATH '../logs/pretrain/'$model'/domainnet/Quickdraw/transformer_10.pth' \
     DATASETS.ROOT_TRAIN_DIR './data/domainnet/quickdraw.txt' \
     DATASETS.ROOT_TRAIN_DIR2 './data/domainnet/'$target_dataset'.txt' \
     DATASETS.ROOT_TEST_DIR './data/domainnet/'$target_dataset'.txt' \

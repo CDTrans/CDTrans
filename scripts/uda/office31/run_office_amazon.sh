@@ -17,7 +17,7 @@ for target_dataset in 'dslr' 'webcam'
 do
     python train.py --config_file configs/uda.yml MODEL.DEVICE_ID $gpus \
     OUTPUT_DIR '../logs/uda/'$model'/office/amazon2'$target_dataset \
-    MODEL.PRETRAIN_PATH '../logs/pretrain/'$model'/office/Amazon/transformer_20.pth' \
+    MODEL.PRETRAIN_PATH '../logs/pretrain/'$model'/office/Amazon/transformer_10.pth' \
     DATASETS.ROOT_TRAIN_DIR './data/office31/amazon_list.txt' \
     DATASETS.ROOT_TRAIN_DIR2 './data/office31/'$target_dataset'_list.txt' \
     DATASETS.ROOT_TEST_DIR './data/office31/'$target_dataset'_list.txt' \

@@ -15,7 +15,7 @@ else
 fi
 python train.py --config_file configs/uda.yml MODEL.DEVICE_ID "('0,1')" \
 OUTPUT_DIR '../logs/uda/'$model'/visda/' \
-MODEL.PRETRAIN_PATH '../logs/pretrain/'$model'/visda/transformer_20.pth' \
+MODEL.PRETRAIN_PATH '../logs/pretrain/'$model'/visda/transformer_10.pth' \
 DATASETS.ROOT_TRAIN_DIR './data/visda/train/train_image_list.txt' \
 DATASETS.ROOT_TRAIN_DIR2 './data/visda/validation/valid_image_list.txt' \
 DATASETS.ROOT_TEST_DIR './data/visda/validation/valid_image_list.txt' \
