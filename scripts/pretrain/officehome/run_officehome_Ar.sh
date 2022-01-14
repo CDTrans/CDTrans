@@ -14,8 +14,8 @@ else
     pretrain_model='deit_small_distilled_patch16_224-649709d9.pth'
 fi
 python train.py --config_file configs/pretrain.yml MODEL.DEVICE_ID "('0')" DATASETS.NAMES 'OfficeHome' \
-DATASETS.ROOT_TRAIN_DIR './data/office31/Art.txt' \
-DATASETS.ROOT_TEST_DIR './data/office31/Product.txt'   \
+DATASETS.ROOT_TRAIN_DIR './data/OfficeHomeDataset/Art.txt' \
+DATASETS.ROOT_TEST_DIR './data/OfficeHomeDataset/Product.txt'   \
 OUTPUT_DIR '../logs/pretrain/'$model'/office-home/Art' \
 MODEL.Transformer_TYPE $model_type \
 MODEL.PRETRAIN_PATH './data/pretrainModel/'$pretrain_model \
