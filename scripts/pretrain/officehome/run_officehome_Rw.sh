@@ -9,7 +9,7 @@ then
     model_type='vit_base_patch16_224_TransReID'
     pretrain_model='deit_base_distilled_patch16_224-df68dfff.pth'
 else
-    model='vit_small'
+    model='deit_small'
     model_type='vit_small_patch16_224_TransReID'
     pretrain_model='deit_small_distilled_patch16_224-649709d9.pth'
 fi

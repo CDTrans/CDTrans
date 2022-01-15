@@ -18,8 +18,7 @@ class DomainNet(BaseImageDataset):
     """
     dataset_dir = ''
 
-#     def __init__(self,root='/home/haoluo/data', verbose=True, pid_begin=0, **kwargs):
-    def __init__(self, root_train='/home/xutongkun_ex/datasets/reid_datasets/Corrected_Market1501', root_val='/home/xutongkun_ex/datasets/reid_datasets/Corrected_Market1501', pid_begin=0, verbose=True, **kwargs):
+    def __init__(self, root_train='./datasets/reid_datasets/Corrected_Market1501', root_val='./datasets/reid_datasets/Corrected_Market1501', pid_begin=0, verbose=True, **kwargs):
         super(DomainNet, self).__init__()
         root_train = root_train
         # root_test = root_test

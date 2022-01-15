@@ -9,7 +9,7 @@ then
     model_type='uda_vit_base_patch16_224_TransReID'
     gpus="('0,1')"
 else
-    model='vit_small'
+    model='deit_small'
     model_type='uda_vit_small_patch16_224_TransReID'
     gpus="('0')"
 fi

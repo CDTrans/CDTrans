@@ -25,10 +25,10 @@ INPUT:
 
 DATASETS:
   NAMES: ('OURAPI')
-  ROOT_TRAIN_DIR: ('/home/xutongkun.xtk/datasets/reid_datasets/Corrected_Market1501')
+  ROOT_TRAIN_DIR: ('./datasets/reid_datasets/Corrected_Market1501')
   NAMES2: ('OURAPI')
-  ROOT_TRAIN_DIR2: ('/home/xutongkun.xtk/datasets/reid_datasets/Refined_DukeMTMC_reID')
-  ROOT_TEST_DIR: ('/home/xutongkun.xtk/datasets/reid_datasets/Refined_DukeMTMC_reID')
+  ROOT_TRAIN_DIR2: ('./datasets/reid_datasets/Refined_DukeMTMC_reID')
+  ROOT_TEST_DIR: ('./datasets/reid_datasets/Refined_DukeMTMC_reID')
 
 DATALOADER:
   SAMPLER: 'softmax'

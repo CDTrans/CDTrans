@@ -9,7 +9,7 @@ then
     model_type='uda_vit_base_patch16_224_TransReID'
     gpus="('0,1')"
 else
-    model='vit_small'
+    model='deit_small'
     model_type='uda_vit_small_patch16_224_TransReID'
     gpus="('0')"
 fi
@@ -22,7 +22,7 @@ do
     DATASETS.ROOT_TRAIN_DIR2 './data/office31/'$target_dataset'_list.txt' \
     DATASETS.ROOT_TEST_DIR './data/office31/'$target_dataset'_list.txt' \
     DATASETS.NAMES "Office" DATASETS.NAMES2 "Office" \
-    MODEL.Transformer_TYPE $mode_type \
+    MODEL.Transformer_TYPE $model_type \
     SOLVER.LOG_PERIOD 10 \
    
 

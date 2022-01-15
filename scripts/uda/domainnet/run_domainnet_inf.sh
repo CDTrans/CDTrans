@@ -9,7 +9,7 @@ then
     model_type='uda_vit_base_patch16_224_TransReID'
     gpus="('0,1')"
 else
-    model='vit_small'
+    model='deit_small'
     model_type='uda_vit_small_patch16_224_TransReID'
     gpus="('0')"
 fi
@@ -22,7 +22,7 @@ do
     DATASETS.ROOT_TRAIN_DIR2 './data/domainnet/'$target_dataset'.txt' \
     DATASETS.ROOT_TEST_DIR './data/domainnet/'$target_dataset'.txt' \
     DATASETS.NAMES "DomainNet" DATASETS.NAMES2 "DomainNet" \
-    MODEL.Transformer_TYPE $mode_type \
+    MODEL.Transformer_TYPE $model_type \
     
 
 done

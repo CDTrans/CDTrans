@@ -15,7 +15,7 @@ from .bases import BaseImageDataset
 
 class OURAPI(BaseImageDataset):
 
-    def __init__(self, root_train='/home/kugang.cwh/datasets/Corrected_Market1501', root_val='/home/kugang.cwh/datasets/Corrected_Market1501', verbose=True, **kwargs):
+    def __init__(self, root_train='./datasets/Corrected_Market1501', root_val='./datasets/Corrected_Market1501', verbose=True, **kwargs):
         super(OURAPI, self).__init__()
         self.train_dir = osp.join(root_train, 'trainval')
         self.query_dir = osp.join(root_val, 'test_probe')

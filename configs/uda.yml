@@ -1,6 +1,6 @@
 MODEL:
   PRETRAIN_CHOICE: 'pretrain'
-  # PRETRAIN_PATH: '/home/xutongkun.xtk/.torch/models/jx_vit_base_p16_224-80ecf9dd.pth'
+  # PRETRAIN_PATH: './.torch/models/jx_vit_base_p16_224-80ecf9dd.pth'
   METRIC_LOSS_TYPE: 'triplet'
   IF_LABELSMOOTH: 'off'
   IF_WITH_CENTER: 'no'
@@ -27,10 +27,10 @@ INPUT:
 
 DATASETS:
   NAMES: ('OURAPI')
-  ROOT_TRAIN_DIR: ('/home/xutongkun.xtk/datasets/reid_datasets/Corrected_Market1501')
+  ROOT_TRAIN_DIR: ('./datasets/reid_datasets/Corrected_Market1501')
   NAMES2: ('OURAPI')
-  ROOT_TRAIN_DIR2: ('/home/xutongkun.xtk/datasets/reid_datasets/Refined_DukeMTMC_reID')
-  ROOT_TEST_DIR: ('/home/xutongkun.xtk/datasets/reid_datasets/Refined_DukeMTMC_reID')
+  ROOT_TRAIN_DIR2: ('./datasets/reid_datasets/Refined_DukeMTMC_reID')
+  ROOT_TEST_DIR: ('./datasets/reid_datasets/Refined_DukeMTMC_reID')
 
 DATALOADER:
   SAMPLER: 'softmax'

@@ -18,16 +18,17 @@ class OfficeHome(BaseImageDataset):
     """
     dataset_dir = ''
 
-#     def __init__(self,root='/home/haoluo/data', verbose=True, pid_begin=0, **kwargs):
-    def __init__(self, root_train='/home/xutongkun/datasets/reid_datasets/Corrected_Market1501', root_val='/home/xutongkun/datasets/reid_datasets/Corrected_Market1501', pid_begin=0, verbose=True, **kwargs):
+    def __init__(self, root_train='./datasets/reid_datasets/Corrected_Market1501', root_val='./datasets/reid_datasets/Corrected_Market1501', pid_begin=0, verbose=True, **kwargs):
         super(OfficeHome, self).__init__()
         root_train = root_train
         root_valid = root_val
+        self.train_dataset_dir = osp.dirname(root_train)
+        self.valid_dataset_dir = osp.dirname(root_val)
         self.train_name = osp.basename(root_train).split('.')[0]
         self.valid_name = osp.basename(root_valid).split('.')[0]
         self.pid_begin = pid_begin
-        train = self._process_dir(root_train)
-        valid = self._process_dir(root_valid)
+        train = self._process_dir(root_train, self.train_dataset_dir)
+        valid = self._process_dir(root_valid, self.valid_dataset_dir)
 
         
         if verbose:
@@ -68,7 +69,7 @@ class OfficeHome(BaseImageDataset):
         print("  valid   | {:5d} | {:8d} | {:9d}".format(num_valid_pids, num_valid_imgs, num_valid_cams))
         print("  ----------------------------------------")
         
-    def _process_dir(self, list_path):
+    def _process_dir(self, list_path, dir_path):
         with open(list_path, 'r') as txt:
             lines = txt.readlines()
         dataset = []
@@ -77,8 +78,8 @@ class OfficeHome(BaseImageDataset):
         for img_idx, img_info in enumerate(lines):
             img_path, pid = img_info.split(' ')
             pid = int(pid)  # no need to relabel
-#             img_path = osp.join(dir_path, img_path)
-            dataset.append((img_path,  self.pid_begin +pid, 0, 0, img_idx))
+            img_path = osp.join(dir_path, img_path)
+            dataset.append((img_path, self.pid_begin +pid, 0, 0, img_idx))
             pid_container.add(pid)
 #             cam_container.add(camid)
 #         print(cam_container, 'cam_container')
