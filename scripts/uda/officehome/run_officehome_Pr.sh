@@ -22,7 +22,7 @@ do
     DATASETS.ROOT_TRAIN_DIR2 './data/OfficeHomeDataset/'$target_dataset'.txt' \
     DATASETS.ROOT_TEST_DIR './data/OfficeHomeDataset/'$target_dataset'.txt' \
     DATASETS.NAMES "OfficeHome" DATASETS.NAMES2 "OfficeHome" \
-    MODEL.Transformer_TYPE $mode_type \
+    MODEL.Transformer_TYPE $model_type \
 
 done
 
