@@ -38,7 +38,7 @@ def obtain_label(logger, val_loader, model, distance='cosine', threshold=0):
         with torch.no_grad():
             img = img.to(device)
             labels = torch.tensor(vid)
-            probs = model(img, img, return_feat_prob=True)
+            probs = model(**dict(x = img, x2 = img, return_feat_prob=True))
             outputs, _, feas = probs[1]
             
             if start_test:
@@ -556,5 +556,3 @@ def do_inference_uda(cfg,
         np.save(os.path.join(cfg.OUTPUT_DIR, 'image_name.npy'), img_name_path)
         np.save(os.path.join(cfg.OUTPUT_DIR, 'view_label.npy'), viewids)
         print('over')
-
-
