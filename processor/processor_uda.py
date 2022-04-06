@@ -334,11 +334,11 @@ def do_train_uda(cfg,
                     loss = torch.sum( -teacher_out * F.log_softmax(student_out, dim=-1), dim=-1)
                     return loss.mean()
                     
-                (self_score1, self_feat1, self_prob1), (score2, feat2, prob2), (score1, feat1, prob1), cross_attn  = model(img, t_img, target, cam_label=target_cam, view_label=target_view ) # output: source , target , source_target_fusion
+                (self_score1, self_feat1, _), (score2, feat2, _), (score_fusion, _, _), aux_data  = model(img, t_img, target, cam_label=target_cam, view_label=target_view ) # output: source , target , source_target_fusion
                 
-                loss1 = loss_fn(score1, feat1, t_pseudo_target, target_cam) 
-                loss2 = loss_fn(self_score1, self_feat1, target, target_cam)
-                loss3 = distill_loss(score2, score1) 
+                loss1 = loss_fn(self_score1, self_feat1, target, target_cam)
+                loss2 = loss_fn(score2, feat2, t_pseudo_target, target_cam)
+                loss3 = distill_loss(score_fusion, score2)
                 loss = loss2 + loss3 + loss1
 
             scaler.scale(loss).backward()
